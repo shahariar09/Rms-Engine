@@ -10,7 +10,7 @@ namespace Rms.Models.Request.Operation
     public class BillCollectionCreateDto
     {
         public string? InvoiceNo { get; set; }
-        public DateTime? CollectionDate { get; set; }
+        public DateTime? VoucherDate { get; set; }
         public string BillNo { get; set; }
         public string CustomerId { get; set; }
         public BillType BillType { get; set; }

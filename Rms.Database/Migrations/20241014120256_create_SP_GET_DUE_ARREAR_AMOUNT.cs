@@ -32,7 +32,7 @@ namespace Rms.Database.Migrations
                                         FROM [RmsDb].[dbo].[RMS_BILL_COLLECTION] bc2 
                                         WHERE bc2.BillNo = eb.BillNo 
                                           AND bc2.CustomerId = eb.CustomerId 
-                                          AND bc2.CollectionDate > eb.IssueDate
+                                          AND bc2.CollectionDate > eb.DueDate
                                      )
                                 THEN (eb.BillMonthTotal * 0.05) -- 5% arrear
                                 ELSE 0
@@ -78,7 +78,7 @@ namespace Rms.Database.Migrations
                                         FROM [RmsDb].[dbo].[RMS_BILL_COLLECTION] bc2 
                                         WHERE bc2.BillNo = rb.BillNo 
                                           AND bc2.CustomerId = rb.CustomerId 
-                                          AND bc2.CollectionDate > rb.IssueDate
+                                          AND bc2.CollectionDate > rb.DueDate
                                      )
                                 THEN (rb.TotalBillAmount * 0.05)
                                 ELSE 0
@@ -124,7 +124,7 @@ namespace Rms.Database.Migrations
                                         FROM [RmsDb].[dbo].[RMS_BILL_COLLECTION] bc2 
                                         WHERE bc2.BillNo = ub.BillNo 
                                           AND bc2.CustomerId = ub.CustomerId 
-                                          AND bc2.CollectionDate > ub.IssueDate
+                                          AND bc2.CollectionDate > ub.DueDate
                                      )
                                 THEN (ub.TotalAmount * 0.05)
                                 ELSE 0

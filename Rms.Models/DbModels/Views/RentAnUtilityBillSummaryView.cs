@@ -15,6 +15,7 @@ namespace Rms.Models.DbModels.Views
         public string? ContactName { get; set; }
         public DateTime IssueDate { get; set; }
         public decimal? TotalBillAmount { get; set; }
+        public decimal? TotalAmount { get; set; }
         public bool BillCollectStatus { get; set; }
         public long? CreatedById { get; set; }  // Nullable if it may not always have a value
         public DateTime? CreatedOn { get; set; }

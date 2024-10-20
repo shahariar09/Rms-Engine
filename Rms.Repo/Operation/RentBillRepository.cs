@@ -74,8 +74,13 @@ namespace Rms.Repo.Operation
         public IQueryable<RentAnUtilityBillSummaryView> GetRentAndUtilityBillByCustomer(BillCriteriaDto model)
         {
             var data = _context.RentAnUtilityBillSummariesView
-                .Where(c => c.CustomerId == model.CustomerId && c.BillCollectStatus == false)
+                .Where(c => c.CustomerId == model.CustomerId)
                 .AsQueryable();
+
+            if (model.BillPayStatus != null)
+            {
+                data = data.Where(c => c.BillCollectStatus == model.BillPayStatus);
+            }
             return data;
         }
 
